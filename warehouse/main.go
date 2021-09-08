@@ -37,12 +37,10 @@ func main() {
 	if err != nil || port == 0 {
 		port = 9090
 	}
-	
-	c := os.Getenv("X_Y")
 
 	token := os.Getenv("GH_TOKEN")
 	if token == "" {
-		panic(c+"11")
+		panic("GH_TOKEN environment variable is not set")
 	}
 
 	ghURL := os.Getenv("GH_URL")
