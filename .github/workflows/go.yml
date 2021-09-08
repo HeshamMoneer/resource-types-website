@@ -12,16 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      env: 
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Go
       uses: actions/setup-go@v2
+      env: 
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         go-version: 1.17
 
     - name: Build
+      env: 
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: git submodule init && git submodule update && cd warehouse && yarn install && yarn build
 
     - name: Test
       env: 
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: echo $GH_TOKEN && cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && ginkgo -r -keepGoing . && cd warehouse && yarn install && yarn test
