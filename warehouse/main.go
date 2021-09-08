@@ -37,6 +37,11 @@ func main() {
 	if err != nil || port == 0 {
 		port = 9090
 	}
+	
+	c := os.Getenv("X_Y")
+	if c != "" {
+		panic(c)
+	}
 
 	token := os.Getenv("GH_TOKEN")
 	if token == "" {
