@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Go
       uses: actions/setup-go@v2
@@ -25,5 +23,5 @@ jobs:
 
     - name: Test
       env: 
-        GH_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && ginkgo -r -keepGoing . && cd warehouse && yarn install && yarn test
