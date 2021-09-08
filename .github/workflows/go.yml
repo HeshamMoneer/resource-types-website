@@ -22,4 +22,6 @@ jobs:
       run: git submodule init && git submodule update && cd warehouse && yarn install && yarn build
 
     - name: Test
-      run: export GH_TOKEN=${{ github.token }} && cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && ginkgo -r -keepGoing . && cd warehouse && yarn install && yarn test
+      env:
+        GH_TOKEN: ${{ YARAB_KHODNY }}
+      run: cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && ginkgo -r -keepGoing . && cd warehouse && yarn install && yarn test
