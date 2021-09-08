@@ -23,5 +23,5 @@ jobs:
 
     - name: Test
       env: 
-        GH_TOKEN: 123gh5
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: echo $GH_TOKEN && cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && ginkgo -r -keepGoing . && cd warehouse && yarn install && yarn test
