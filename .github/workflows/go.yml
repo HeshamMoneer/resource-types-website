@@ -10,8 +10,6 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{  secrets.GH_TOKEN  }}
     steps:
     - uses: actions/checkout@v2
 
@@ -25,5 +23,3 @@ jobs:
 
     - name: Test
       run: cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && ginkgo -r -keepGoing . && cd warehouse && yarn install && yarn test
-      env:
-        GH_TOKEN: ${{  secrets.GH_TOKEN  }}
