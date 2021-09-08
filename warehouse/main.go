@@ -39,13 +39,10 @@ func main() {
 	}
 	
 	c := os.Getenv("X_Y")
-	if c != "" {
-		panic(c)
-	}
 
 	token := os.Getenv("GH_TOKEN")
 	if token == "" {
-		panic("GH_TOKEN environment variable is not set")
+		panic(c+"11")
 	}
 
 	ghURL := os.Getenv("GH_URL")
