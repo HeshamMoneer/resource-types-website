@@ -22,7 +22,7 @@ jobs:
 
 
     - name: Build
-      run: git submodule init && git submodule update && cd warehouse && yarn install && yarn build && go run main.go
+      run: git submodule init && git submodule update && cd warehouse && yarn install && yarn build
 
     - name: Test
       env:
