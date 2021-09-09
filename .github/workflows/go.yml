@@ -34,3 +34,10 @@ jobs:
           set GH_TOKEN=${{ github.token }}
           ginkgo -r -keepGoing . 
           yarn install && yarn test
+          
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v2.5.0
+      with:
+        target_branch: master
+        build_dir: warehouse
+        committer: Hesham
