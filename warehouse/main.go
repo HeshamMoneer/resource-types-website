@@ -11,8 +11,7 @@ import (
 
 	"github.com/concourse/dutyfree/fetcher"
 	"github.com/concourse/dutyfree/server"
-	
-	"github.com/joho/godotenv"
+
 )
 
 //go:embed web/public
@@ -21,17 +20,6 @@ var webFS embed.FS
 //go:embed resource-types
 var resourceTypesFS embed.FS
 
-func goDotEnvVariable(key string) string {
-
-  // load .env file
-  err := godotenv.Load(".env")
-
-  if err != nil {
-    log.Fatalf("Error loading .env file")
-  }
-
-  return os.Getenv(key)
-}
 
 func main() {
 
@@ -52,7 +40,7 @@ func main() {
 		port = 9090
 	}
 	
-	token := goDotEnvVariable("GH_TOKEN")
+	token := os.Getenv("GH_TOKEN")
 	if token == "" {
 		panic("GH_TOKEN environment variable is not set")
 	}
