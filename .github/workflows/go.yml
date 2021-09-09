@@ -5,13 +5,11 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    
-env:
-  GH_TOKEN: ${{ github.token }}
 
 jobs:
 
   build:
+    environment: env
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
