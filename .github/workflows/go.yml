@@ -24,4 +24,4 @@ jobs:
       run: git submodule init && git submodule update && cd warehouse && yarn install && yarn build
 
     - name: Test
-      run: cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && cd warehouse && yarn install && yarn test
+      run: cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && yarn install && yarn test
