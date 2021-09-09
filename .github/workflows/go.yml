@@ -15,13 +15,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Go
-      uses: actions/setup-go@v2
+    - name: Setup Go environment
+      uses: actions/setup-go@v2.1.4
       with:
         go-version: 1.17
+
 
     - name: Build
       run: git submodule init && git submodule update && cd warehouse && yarn install && yarn build
 
     - name: Test
-      run: cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && yarn install && yarn test
+      run: cd warehouse && go get -u github.com/onsi/ginkgo/ginkgo && ginkgo -r -keepGoing . && yarn install && yarn test
