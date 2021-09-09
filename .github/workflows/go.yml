@@ -29,10 +29,8 @@ jobs:
         GH_TOKEN: ${{ github.token }}
       run: |
           bash 
-          go get github.com/joho/godotenv
           cd warehouse 
           go get -u github.com/onsi/ginkgo/ginkgo 
-          set GH_TOKEN=${{ github.token }} 
-          env 
+          set GH_TOKEN=${{ github.token }}
           ginkgo -r -keepGoing . 
           yarn install && yarn test
