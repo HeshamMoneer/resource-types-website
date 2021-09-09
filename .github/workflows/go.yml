@@ -31,7 +31,7 @@ jobs:
           bash 
           cd warehouse 
           go get -u github.com/onsi/ginkgo/ginkgo 
-          export GH_TOKEN=${{ github.token }} 
+          set GH_TOKEN=${{ github.token }} 
           env 
           ginkgo -r -keepGoing . 
           yarn install && yarn test
