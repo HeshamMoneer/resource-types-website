@@ -40,7 +40,6 @@ func main() {
 
 	token := os.Getenv("GH_TOKEN")
 	if token == "" {
-		token := "${github.token}"
 		//panic("GH_TOKEN environment variable is not set")
 	}
 
