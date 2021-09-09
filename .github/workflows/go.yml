@@ -37,6 +37,8 @@ jobs:
           
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.5.0
+      env:
+        GUTHUB_TOKEN: ${{ github.token }}
       with:
         target_branch: master
         build_dir: warehouse
