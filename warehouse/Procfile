@@ -1,1 +1,1 @@
-web: bin/resource-type-website
+web: main.go
