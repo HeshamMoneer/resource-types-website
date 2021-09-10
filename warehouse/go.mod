@@ -1,7 +1,7 @@
 module github.com/concourse/dutyfree
 
 // +heroku install .
-// +heroku goVersion go1.16
+// +heroku goVersion go1.16.2
 
 go 1.16
 
