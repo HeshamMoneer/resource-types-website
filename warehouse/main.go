@@ -11,6 +11,7 @@ import (
 
 	"github.com/concourse/dutyfree/fetcher"
 	"github.com/concourse/dutyfree/server"
+	
 
 )
 
@@ -22,6 +23,8 @@ var resourceTypesFS embed.FS
 
 
 func main() {
+	
+	
 
 	webFS, err := fs.Sub(webFS, "web/public")
 	if err != nil {
@@ -37,7 +40,7 @@ func main() {
 
 	port, err := strconv.Atoi(os.Getenv("PORT"))
 	if err != nil || port == 0 {
-		port = 9090
+		port = 8080
 	}
 	
 	token := os.Getenv("GH_TOKEN")
