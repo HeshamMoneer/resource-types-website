@@ -47,8 +47,8 @@ var _ = Describe("Warehouse main", func() {
 			dir, err := ioutil.ReadDir("resource-types")
 			Expect(err).NotTo(HaveOccurred())
 
-			// length  - 3 to remove the licence, readme and .git entries.
-			Expect(len(resources)).To(Equal(len(dir) - 3))
+			// length  - 4 to remove the licence, readme and .git entries and the github workflow directory
+			Expect(len(resources)).To(Equal(len(dir) - 4))
 		})
 
 		AfterEach(func() {
