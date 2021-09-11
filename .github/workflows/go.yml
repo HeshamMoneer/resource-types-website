@@ -28,7 +28,13 @@ jobs:
     - name: Test
       env:
         TOKEN: ${{ github.token }}
-      run: echo 0
+      run: |
+          bash 
+          cd warehouse 
+          go get -u github.com/onsi/ginkgo/ginkgo 
+          set GH_TOKEN=${{ github.token }}
+          ginkgo -r -keepGoing . 
+          yarn install && yarn test
     
     - name: Deploy to Heroku
       uses: AkhileshNS/heroku-deploy@v3.12.12
