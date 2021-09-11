@@ -1,3 +1,4 @@
 [submodule "warehouse/resource-types"]
 	path = warehouse/resource-types
 	url = https://github.com/HeshamMoneer/resource-types.git
+	branch = master
