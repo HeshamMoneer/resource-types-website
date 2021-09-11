@@ -43,4 +43,5 @@ jobs:
         heroku_email: mo3gizaaa@gmail.com
         heroku_app_name: concourse-catalog-2
         appdir: warehouse/
+        buildpack: https://github.com/dmathieu/heroku-buildpack-submodules
         
