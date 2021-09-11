@@ -41,5 +41,5 @@ jobs:
       with: 
         heroku_api_key: ${{ secrets.HEROKU_API}}
         heroku_email: mo3gizaaa@gmail.com
-        heroku_app_name: concourse-catalog-2
+        heroku_app_name: concourse-catalog
         
