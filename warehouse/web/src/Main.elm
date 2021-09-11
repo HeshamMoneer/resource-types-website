@@ -244,7 +244,7 @@ navigation =
             "https://blog.concourse-ci.org"
 
         discussUrl =
-            "https://discuss.concourse-ci.org"
+            "google.com"
     in
     div [ class "page-top" ]
         [ nav
