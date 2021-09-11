@@ -244,7 +244,7 @@ navigation =
             "https://blog.concourse-ci.org"
 
         discussUrl =
-            "https://www.facebook.com/Hesham.Mohamed.Moner/"
+            "https://www.youtube.com"
     in
     div [ class "page-top" ]
         [ nav
