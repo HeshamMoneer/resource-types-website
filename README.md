@@ -1,5 +1,5 @@
 # Updated
-This forked repository is automatically deployed on any new commit to this link (https://concourse-catalog.herokuapp.com/).
+This forked repository is automatically deployed on any new commit to this link [https://concourse-catalog.herokuapp.com/].
 
 
 
